@@ -136,10 +136,25 @@ img {
   font-weight: 500;
   line-height: 1.5;
   color: var(--brand-color-dark);
+  padding-bottom: 24px;
 }
 .menu-link:hover,
 .menu-link:focus {
   color: var(--brand-color-logo);
+
+  position: relative;
+}
+
+.menu-link:is(:hover, :focus)::after {
+  content: "";
+  background-color: #404bbf;
+  border-radius: 2px;
+  position: absolute;
+  display: block;
+  height: 2px;
+  width: 100%;
+  bottom: 0;
+  left: 0;
 }
 
 .contact-link {
@@ -162,18 +177,15 @@ img {
   padding: 12px 24px;
 }
 
-.buttons:hover,
-.buttons:focus {
-  color: #ffff;
-  background-color: #4d5ae5;
-}
-
 /* =========HERO======== */
 .hero {
   background-color: #2e2f42;
   background-image: var(--hero-grad), url(../images/people_in_the_office.jpg);
   padding-top: 188px;
   padding-bottom: 188px;
+  max-width: 1440рх;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .hero-title {
@@ -232,8 +244,6 @@ img {
   align-items: center;
 }
 
-.benefits-icon {
-}
 /* =========OUR WORK======== */
 .work-list {
   display: flex;
@@ -280,9 +290,6 @@ img {
   gap: 24px;
 }
 
-.team-soc-item {
-}
-
 .team-soc-link {
   width: 40px;
   height: 40px;
@@ -306,6 +313,13 @@ img {
   border-radius: 4px;
   height: 48px;
   border: none;
+}
+
+.buttons-gallery:is(:hover, :focus) {
+  color: #ffff;
+  background-color: #4d5ae5;
+  box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 2px 1px rgba(0, 0, 0, 0.08),
+    0px 2px 2px rgba(0, 0, 0, 0.12);
 }
 
 .btn-list-gallery {
@@ -334,6 +348,12 @@ img {
   row-gap: 48px;
 }
 
+.portfolio-list:is(:hover, :focus) {
+  box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 2px 1px rgba(0, 0, 0, 0.08),
+    0px 2px 2px rgba(0, 0, 0, 0.12);
+  cursor: pointer;
+}
+
 /* =========CUSTOMERS===== */
 .customers-title {
   font-size: 36px;
@@ -346,9 +366,6 @@ img {
 .customers-list {
   display: flex;
   gap: 24px;
-}
-
-.customers-item {
 }
 
 .customers-link {
@@ -397,6 +414,8 @@ img {
 }
 
 .soc-media-subtitle {
+  font-weight: 500;
+  font-size: 20px;
   line-height: 1.5;
   color: var(--brand-color-white);
   margin-bottom: 16px;
